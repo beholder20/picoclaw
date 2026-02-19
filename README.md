@@ -152,6 +152,22 @@ cd picoclaw
 # Install make (if missing)
  sudo apt-get install -y make
 
+# Download latest Go (adjust version if needed — check https://go.dev/dl/ for newest)
+wget https://go.dev/dl/go1.22.5.linux-amd64.tar.gz
+
+# Remove any old Go installation (safe if none exists)
+sudo rm -rf /usr/local/go
+
+# Extract to /usr/local
+sudo tar -C /usr/local -xzf go1.22.5.linux-amd64.tar.gz
+
+# Add Go to your PATH (for current session)
+export PATH=$PATH:/usr/local/go/bin
+
+# Make it permanent (add to shell config)
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+source ~/.bashrc
+
 # Download and install Go
 make deps
 

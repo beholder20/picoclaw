@@ -102,7 +102,7 @@ Edited for Ubuntu Users!
   </tr>
 </table>
 
-### 📱 Run on old Android Phones
+### 📱 1. Install and Run on old Android Phones
 Give your decade-old phone a second life! Turn it into a smart AI Assistant with PicoClaw. Quick Start:
 1. **Install Termux** (Available on F-Droid or Google Play).
 2. **Execute cmds**
@@ -128,7 +128,7 @@ PicoClaw can be deployed on almost any Linux device!
 
 🌟 More Deployment Cases Await！
 
-## 📦 Install
+## 📦 2. Install and run on Ubuntu Linux
 
 ### Install with precompiled binary
 
@@ -137,9 +137,22 @@ Download the firmware for your platform from the [release](https://github.com/si
 ### Install from source (latest features, recommended for development)
 
 ```bash
+# Check for system updates
+sudo apt-get update
+
+# Install git (if missing)
+sudo apt-get install -y git
+
+# Clone code from git repo
 git clone https://github.com/sipeed/picoclaw.git
 
+# Change directory into picoclaw folder
 cd picoclaw
+
+# Install make (if missing)
+ sudo apt-get install -y make
+
+# Download and install Go
 make deps
 
 # Build, no need to install
